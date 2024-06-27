@@ -66,7 +66,7 @@ class SamplePlugin : Plugin<Project> {
                 configure<LibraryExtension> {
                     compileSdk = 34
                     defaultConfig {
-                        minSdk = 21
+                        minSdk = 24
                         @Suppress("DEPRECATION")
                         targetSdk = 34
                         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
