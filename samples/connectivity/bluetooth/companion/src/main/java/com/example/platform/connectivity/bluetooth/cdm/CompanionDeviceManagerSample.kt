@@ -314,9 +314,8 @@ private fun Intent.getAssociationResult(): AssociatedDeviceCompat? {
 
 @RequiresApi(Build.VERSION_CODES.O)
 private suspend fun requestDeviceAssociation(deviceManager: CompanionDeviceManager): IntentSender {
-    // Match only Bluetooth devices whose service UUID matches this pattern.
-    // For this demo we will match our GATTServerSample
-    val scanFilter = ScanFilter.Builder().setServiceUuid(ParcelUuid(SERVICE_UUID)).build()
+    // Match only Polar Device.
+    val scanFilter = ScanFilter.Builder().setDeviceName("Polar Sense AD18CC2C").build()
     val deviceFilter = BluetoothLeDeviceFilter.Builder()
         .setScanFilter(scanFilter)
         .build()
@@ -325,7 +324,7 @@ private suspend fun requestDeviceAssociation(deviceManager: CompanionDeviceManag
         // Find only devices that match this request filter.
         .addDeviceFilter(deviceFilter)
         // Stop scanning as soon as one device matching the filter is found.
-        .setSingleDevice(true)
+//        .setSingleDevice(true)
         .build()
 
     val result = CompletableDeferred<IntentSender>()
