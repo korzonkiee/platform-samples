@@ -27,6 +27,7 @@ import android.companion.CompanionDeviceService
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.annotation.RequiresPermission
 import androidx.core.app.ActivityCompat
@@ -51,6 +52,9 @@ class CompanionDeviceSampleService : CompanionDeviceService() {
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onDeviceAppeared(associationInfo: AssociationInfo) {
         super.onDeviceAppeared(associationInfo)
+
+        Log.d("CompanionDeviceSampleService", "onDeviceAppeared")
+
         if (missingPermissions()) {
             return
         }
@@ -75,6 +79,9 @@ class CompanionDeviceSampleService : CompanionDeviceService() {
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onDeviceDisappeared(associationInfo: AssociationInfo) {
         super.onDeviceDisappeared(associationInfo)
+
+        Log.d("CompanionDeviceSampleService", "onDeviceDisappeared")
+
         if (missingPermissions()) {
             return
         }
