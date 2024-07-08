@@ -37,6 +37,9 @@ dependencyResolutionManagement {
         maven {
             url = uri("https://androidx.dev/snapshots/builds/11809947/artifacts/repository")
         }
+        maven {
+            url = uri("https://jitpack.io")
+        }
     }
 }
 
