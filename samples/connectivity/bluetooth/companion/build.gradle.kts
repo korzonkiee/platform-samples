@@ -25,4 +25,7 @@ android {
 
 dependencies {
     implementation(project(":samples:connectivity:bluetooth:ble"))
+    implementation("com.github.polarofficial:polar-ble-sdk:5.6.0")
+    implementation("io.reactivex.rxjava3:rxjava:3.1.6")
+    implementation("io.reactivex.rxjava3:rxandroid:3.0.2")
 }
